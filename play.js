@@ -8,14 +8,17 @@ function getComputerChoice() {
 // Assign the return value from getComputerChoice to computerSelection variable. 
 let computerSelection = getComputerChoice();
 
-console.log(computerSelection)
-
 
 // Ask the user to input either 'Rock', 'Paper' or 'Scissors'. Store the value in a playerSelection variable. 
+let playerSelection = prompt("Input your choice here: ");
 
 
 // Standardise player input to ensure that its case-insensitive. 
-
+function capitalise(playerInput) {
+    let firstLetter = playerInput[0].toUpperCase();
+    let letters = playerInput.slice(1).toLowerCase();
+    return firstLetter + letters;
+}
 
 
 // create playRound function that has two parameters(computerSelection and playerSelection). 
