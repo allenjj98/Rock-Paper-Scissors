@@ -1,6 +1,6 @@
 // create getComputerChoice function to randomly return either 'Rock', 'Paper' or 'Scissors'
 function getComputerChoice() {
-    const options = ["Rock", "Paper", "Scissors"];
+    const options = ["Scissors", "Rock", "Paper"];
     let randomChoice = options[Math.floor(Math.random() * options.length)];
     return randomChoice;
 }
@@ -20,10 +20,30 @@ function capitalise(playerInput) {
     return firstLetter + letters;
 }
 
+playerSelection = capitalise(playerSelection)
+
+
 
 // create playRound function that has two parameters(computerSelection and playerSelection). 
+function playRound(computerSelection, playerSelection) {
     // compare the values to decide the outcome of the game. 
-    // Return a string that declares the outcome of the game.
+    if (playerSelection == "Rock" && computerSelection == "Scissors") {
+        // Return a string that declares the outcome of the game.
+        return `You Win ${playerSelection} beats ${computerSelection}!`;
+    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+        return `You Win ${playerSelection} beats ${computerSelection}!`;
+    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+        return `You Win ${playerSelection} beats ${computerSelection}!`;
+    } else if (playerSelection === computerSelection) {
+        return "Tie!";
+    }
+    return `You Lose! ${computerSelection} beats ${playerSelection}`;
+}
+
+
+
+    
+    
 
 // create playGame function. 
     // create playerScore variable and initialise to 0
